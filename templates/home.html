@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>
+    Madlibs Home Page
+</h1>
+<form class="flex-column container" action="/story">
+    {% for q in story %}
+    <div class="flex">
+        <label for={{q}}>{{q.title()}}:</label>
+        <input name={{q}} type="text" placeholder={{q}}>
+    </div>
+    
+    {% endfor %}
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}
